@@ -8,7 +8,7 @@ class AlbumsController < ApplicationController
 
     def show
         album = Album.find_by(id: params[:id])
-        if video
+        if album
             render json: album
         else
             render json: {error: "Album Not Found"}, status: :not_found
@@ -17,7 +17,7 @@ class AlbumsController < ApplicationController
 
     def create
         album = Album.create(album_new)
-        if video.valid?
+        if album.valid?
             render json: album, status: :created
         else
             render json: {errors: "Unable To Be processed"}, status: :unprocessable_entity
