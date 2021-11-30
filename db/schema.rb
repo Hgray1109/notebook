@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2021_11_30_052555) do
 
   create_table "songs", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "song_id"
+    t.integer "album_id"
     t.string "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
