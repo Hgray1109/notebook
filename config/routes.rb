@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   
+  resources :comments
+  resources :pens
+  resources :videos
+  resources :singles
+  resources :songs
+  resources :albums
   resources :users
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!
