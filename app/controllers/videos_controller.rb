@@ -1,5 +1,5 @@
 class VideosController < ApplicationController
-
+before_action :authorize_user, only: [:create, :destroy]
 
 
     def index 
@@ -41,4 +41,22 @@ private
     def video_new
         params.permit(:user_id, :url)
     end
+
+    def set_video
+        @video = Video.find(params[:id])
+    end
+
+    def authorize_user
+        video = Video.find_by(id: params[:id])
+        user_can_modify = video.user_id == current_user.id
+        render json: { error: "You don't have permission to perform that action" }, status: :forbidden unless user_can_modify
+      end
+
+    #   def authorize_user
+    #     user_can_modify = current_user.admin? || @event.user_id == current_user.id
+    #     render json: { error: "You don't have permission to perform that action" }, status: :forbidden unless user_can_modify
+    #   end
+
+    # I don't want just any admin to be able to delete
+
 end

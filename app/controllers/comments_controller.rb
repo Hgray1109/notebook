@@ -16,6 +16,17 @@ class CommentsController < ApplicationController
         end
     end
 
+    def update
+        comments = Comment.find_by(id: params[:id])
+        if comments
+          comments.update(change_comment)
+        else
+          render json: {error: "Original Comment Not Found"}, status: :not_found
+        end
+      end
+
+
+
     def destroy
         comment = Comment.find_by(id: params[:id])
         if comment
@@ -29,6 +40,9 @@ class CommentsController < ApplicationController
 
 private
 
+    def change_comment
+        params.permit(:remark, :id)
+    end
     # def set_comment
     #     @comment = Comment.find(params[:id])
     # end
