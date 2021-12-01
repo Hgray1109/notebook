@@ -1,23 +1,24 @@
 class UsersController < ApplicationController
 
 
-    def index
-        users = User.all
-        render json: users, status: :ok
+    # def index
+    #     users = User.all
+    #     render json: users, status: :ok
 
-    end
+    # end
 
     def show
         if current_user
         render json: current_user, status: :ok
         else 
-        render json: {error: "no active session"}, status: unauthorized
+        render json: {error: "No active session"}, status: unauthorized
         end
     end
 
     def create
         user = User.create(user_params)
         if user.valid?
+            session[:user_id] = user.id
             render json: user, status: :ok
         else
             render json: {error: user.errors}, status: :unprocessable_entity
