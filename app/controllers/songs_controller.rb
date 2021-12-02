@@ -1,5 +1,6 @@
 class SongsController < ApplicationController
-
+    before_action :set_song, only: [:destroy]
+    before_action :authorize_user, only: [:destroy]
 
 
     def index 
@@ -20,16 +21,20 @@ class SongsController < ApplicationController
 
 
      def destroy
-        song = Song.find_by(id: params[:id])
-        if song
-            song.destroy
-            head :no_content
-        else render json: {error: "Song not found"},
-        status: :not_found
+        @song.destroy
         end
-    end
+    
 
+private 
 
+def set_song
+    @song = Song.find(params[:id])
+  end
+
+def authorize_user
+    user_can_modify = current_user.admin? || @song.user_id == current_user.id
+    render json: { error: "You don't have permission to perform that action" }, status: :forbidden unless user_can_modify
+  end
 
 
 end

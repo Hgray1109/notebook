@@ -1,5 +1,6 @@
 class JournalsController < ApplicationController
-
+before_action :set_journal, only: [:update, :show, :destroy] 
+before_action :authorize_user, only: [:index, :show, :create, :update, :destroy]
 
     def index
         journals = Journal.all
@@ -7,6 +8,10 @@ class JournalsController < ApplicationController
     end
 
 
+    def show
+          render json: @journal 
+      end
+  
 
     def create
         journal = Journal.create(journal_params)
@@ -18,33 +23,41 @@ class JournalsController < ApplicationController
       end
       
       def update
-        journal = Journal.find_by(id: params[:id])
-        if journal
-          journal.update(change_journal)
+        
+        if @journal.update(change_journal)
+          render json: @journal, status: :ok
         else
-          render json: {error: "Original Journal Not Found"}, status: :not_found
+          render json: @journal.errors, status: :unprocessable_entity
         end
        
       end
     
       
       def destroy
-        journal = Journal.find_by(id: params[:id])
-          if journal
-            journal.destroy
-            head :no_content
-          else render json: {error: "Comment not found"}, status: :not_found
-          end
-        
+        @journal.destroy
+      end
+
+private
+
+      def change_journal
+        params.permit(:user_id, :journal_body)
+      end
+
+      def journal_params
+        params.permit(:user_id, :journal_body)
       end
 
 
-
-
-
-
-
-
+      def set_journal
+        @journal = Journal.find(params[:id])
+      end
+    
+    def authorize_user
+        user_can_modify = current_user.admin? || @journal.user_id == current_user.id
+        render json: { error: "You don't have permission to perform that action" }, status: :forbidden unless user_can_modify
+      end
+    
+    
 
 
 end

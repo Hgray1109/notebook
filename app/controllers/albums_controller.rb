@@ -1,5 +1,6 @@
 class AlbumsController < ApplicationController
-
+before_action :set_album, only: [:destroy]
+before_action :authorize_user, only: [:destroy]
 
     def index
         albums = Album.all
@@ -16,14 +17,20 @@ class AlbumsController < ApplicationController
         end
     end
 
+ 
     def destroy
-        album = Album.find_by(id: params[:id])
-        if album
-            album.destroy
-            head :no_content
-        else render json: {error: "Album not found"},
-        status: :not_found
-        end
-    end
+        @album.destroy
+      end
 
+
+    private 
+
+    def set_album
+        @album = Album.find(params[:id])
+      end
+
+    def authorize_user
+        user_can_modify = current_user.admin? || @album.user_id == current_user.id
+        render json: { error: "You don't have permission to perform that action" }, status: :forbidden unless user_can_modify
+      end
 end
