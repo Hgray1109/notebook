@@ -1,23 +1,48 @@
-import logo from './logo.svg';
+import UnAuthenticatedApp from './not-logged-in/UnAuthenticatedApp'
+import AuthenticatedApp from './logged-in/AuthenticatedApp'
+import React, { useState, useEffect } from 'react'
+
 import './App.css';
 
+
 function App() {
+  const [currentUser, setCurrentUser] = useState(null)
+  const [authChecked, setAuthChecked] = useState(false)
+  const [rerender, setRerender] = useState(false)
+
+  useEffect(() => {
+    fetch('/me', {
+      credentials: 'include'
+    })
+      .then(res => {
+        if (res.ok) {
+          res.json().then((user) => {
+            setCurrentUser(user)
+            setAuthChecked(true)
+          })
+        } else {
+          setAuthChecked(true)
+        }
+      })
+  }, [])
+  
+
+  if (!authChecked) { return <div></div> }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      {currentUser ? (
+        <AuthenticatedApp
+          setCurrentUser={setCurrentUser}
+          currentUser={currentUser}
+          rerender={rerender}
+          setRerender={setRerender}
+        />
+      ) : (
+        <UnAuthenticatedApp
+          setCurrentUser={setCurrentUser}
+        />
+      )
+      }
     </div>
   );
 }
