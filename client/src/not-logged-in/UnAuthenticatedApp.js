@@ -8,7 +8,9 @@ export default function UnAuthenticatedApp({ setCurrentUser }) {
             <Routes>
                 <Route exact path="/" element={<Login setCurrentUser={setCurrentUser}/>}/>
                 <Route exact path="/signup" element={<Signup setCurrentUser={setCurrentUser} />}/>
+                {/* <Route exact path="/signup_admin" element={<AdminSignup setCurrentUser={setCurrentUser} />}/> */}
                 <Route exact path="/" element={<Navigate to = "/" />}/>
+                
             </Routes>
             
     
