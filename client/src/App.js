@@ -24,7 +24,7 @@ function App() {
           setAuthChecked(true)
         }
       })
-  }, [])
+  }, [rerender])
   
 
   if (!authChecked) { return <div><h1>something</h1></div> }
