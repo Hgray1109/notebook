@@ -7,6 +7,6 @@ export default function AuthenticatedApp ({ currentUser}){
 
 
     return(
-        <div></div>
+        <div><h1>I am logged in. GET ME OUT! "Log In with Spotify" </h1></div>
     )
 }

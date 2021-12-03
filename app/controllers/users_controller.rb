@@ -6,7 +6,7 @@ class UsersController < ApplicationController
         user = User.all
         render json: user, status: :ok
     end
-    
+
     def show
         if current_user
         render json: current_user, status: :ok
@@ -30,7 +30,7 @@ class UsersController < ApplicationController
       private
 
       def user_params
-        params.permit(:username, :email, :password, :password_confirmation)
+        params.permit(:username, :email, :card_number, :card_expiration, :card_name, :admin, :password, :password_confirmation)
       end
 
 end

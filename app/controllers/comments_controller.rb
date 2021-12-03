@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
     before_action :set_comment, only: [:destroy, :create]
-    # before_action :authorize_user, only: [:index, :create, :destroy]
+    before_action :authorize_user, only: [:index, :create, :destroy]
 
     def index
         # @tests = Test.all

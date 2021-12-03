@@ -27,7 +27,7 @@ function App() {
   }, [])
   
 
-  if (!authChecked) { return <div></div> }
+  if (!authChecked) { return <div><h1>something</h1></div> }
   return (
     <div className="container">
       {currentUser ? (

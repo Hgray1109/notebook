@@ -50,7 +50,7 @@ export default function Signup({ setCurrentUser }) {
                     <button type='submit'>Sign Up!</button>
                 </form>
                 <p>If you have an account Click <Link to='/' style={{ textDecoration: 'none' }}><span>here</span></Link> to login.</p>
-                <p> Click here for a Premium Account <Link to='/AdminSignup' style={{textDecoration: 'none'}}><span>here</span></Link> </p>
+                <p> Click here for a Premium Account <Link to='/adminSignup' style={{textDecoration: 'none'}}><span>here</span></Link> </p>
             </div>
         </div>
     )
