@@ -12,7 +12,7 @@ export default function Navbar({ handleLogout }){
                 <Link to='/favorite-album'><span className='menu-item' >Favorite Album</span></Link>
                 <Link to='/favorite-songs'><span className='menu-item' >Favorite Song!</span></Link>
                 <Link to='/videos'><span className='menu-item' >Videos</span></Link>
-                <Link to='/journal'><span className='menu-item' >Journal</span></Link>
+                <Link to='/journals'><span className='menu-item' >Journal</span></Link>
                 <Link to='/'><span className='menu-item' onClick={handleLogout}>Log out</span></Link>
             </nav>
         </div>

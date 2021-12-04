@@ -3,7 +3,8 @@ import { Routes, Route, Navigate} from 'react-router-dom'
 import FavoriteAlbum from './each-page/FavoriteAlbum'
 import FavoriteSongs from "./each-page/FavoriteSongs";
 import Videos from "./each-page/Videos";
-import Journal from "./each-page/Journal"
+import Journal from "./each-page/Journal";
+import JournalCard from "./each-page/cards-folder/JournalCard";
 
 export default function Body(){
 
@@ -14,7 +15,8 @@ export default function Body(){
                 <Route exact path="/favorite-album" element={<FavoriteAlbum/>}/>
                 <Route exact path="/favorite-songs" element={<FavoriteSongs/>}/>
                 <Route exact path='/videos' element={<Videos/>}/>
-                <Route exact path='/journal' element={<Journal/>}/>
+                <Route exact path='/journals' element={<Journal/>}/>
+                <Route exact path="/journals/:id" element={<JournalCard/>}/>
             </Routes>
         </div>
     )

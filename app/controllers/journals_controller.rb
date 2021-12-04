@@ -32,6 +32,12 @@ before_action :authorize_user, only: [:index, :show, :create, :update, :destroy]
        
       end
     
+      def update_journal
+      
+        journal_to_update = Journal.find(params[:id])
+        journal_to_update.update!(journal: params[:journal_body])
+        render json: journal_to_update, status: :ok
+    end
       
       def destroy
         @journal.destroy
@@ -40,11 +46,11 @@ before_action :authorize_user, only: [:index, :show, :create, :update, :destroy]
 private
 
       def change_journal
-        params.permit(:user_id, :journal_body)
+        params.permit(:user_id, :journal_body, :title)
       end
 
       def journal_params
-        params.permit(:user_id, :journal_body)
+        params.permit(:user_id, :journal_body, :title)
       end
 
 

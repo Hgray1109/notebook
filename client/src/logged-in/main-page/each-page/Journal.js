@@ -11,19 +11,20 @@ export default function Journal(){
         .then(setJournals)
     },[])
 
-console.log(journals)
-    const fuckthisshit = journals.map( journal => 
+
+    const eachJournal = journals ? (journals.map( journal => 
 <JournalCard 
         key={journal.id}
         journal={journal}
         />
-        )
+        )) : null
     
+        console.log(journals)
 
     return(
         <div className='journal-container'>
             <h1>this is the journal page</h1>
-            {fuckthisshit}
+            {eachJournal}
         </div>
     )
 }

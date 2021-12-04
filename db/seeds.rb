@@ -5,7 +5,7 @@ Video.destroy_all
 Comment.destroy_all
 
 
-user1 = User.create(username: "Sowande", email: "Sowande@gmail.com", password: "password")
+user1 = User.create(username: "Sowande", email: "Sowande@gmail.com", password: "password", admin: true)
 user2 = User.create(username: "Hashem", email: "Hashem@gmail.com", password: "password")
 
 puts "user seeding done"
@@ -25,8 +25,8 @@ video2 = Video.create(user_id: user2.id, url: "https://www.youtube.com/embed/Gd9
 
 puts "video seeding done"
 
-journal1 = Journal.create(user_id: user1.id)
-journal2 = Journal.create(user_id: user2.id)
+journal1 = Journal.create(user_id: user1.id, title:"Appear")
+journal2 = Journal.create(user_id: user2.id, title:"Example Appear")
 
 puts "journal seeding done"
 
