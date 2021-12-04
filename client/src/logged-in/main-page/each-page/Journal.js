@@ -1,4 +1,4 @@
-import React,{ useState, useEffect} from "react";
+import React, { useState, useEffect} from "react";
 import JournalCard from './cards-folder/JournalCard'
 
 
@@ -6,23 +6,24 @@ export default function Journal(){
     const [journals, setJournals] = useState([])
 
     useEffect(()=>{
-        fetch('/journals')
+        fetch("/journals")
         .then(resp => resp.json())
         .then(setJournals)
     },[])
 
+console.log(journals)
     const fuckthisshit = journals.map( journal => 
 <JournalCard 
         key={journal.id}
         journal={journal}
         />
         )
-    console.log(journals)
+    
 
     return(
         <div className='journal-container'>
             <h1>this is the journal page</h1>
-
+            {fuckthisshit}
         </div>
     )
 }

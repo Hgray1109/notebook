@@ -25,8 +25,8 @@ video2 = Video.create(user_id: user2.id, url: "https://www.youtube.com/embed/Gd9
 
 puts "video seeding done"
 
-journal1 = Journal.create(user_id: user1.id, journal_body: "Description of Written Work")
-journal2 = Journal.create(user_id: user2.id, journal_body: "Breakdown of lyrics")
+journal1 = Journal.create(user_id: user1.id)
+journal2 = Journal.create(user_id: user2.id)
 
 puts "journal seeding done"
 

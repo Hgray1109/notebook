@@ -9,14 +9,14 @@ export default function Body(){
 
 
     return(
-        <body>
+        <div>
             <Routes>
                 <Route exact path="/favorite-album" element={<FavoriteAlbum/>}/>
                 <Route exact path="/favorite-songs" element={<FavoriteSongs/>}/>
                 <Route exact path='/videos' element={<Videos/>}/>
                 <Route exact path='/journal' element={<Journal/>}/>
             </Routes>
-        </body>
+        </div>
     )
 }
 
