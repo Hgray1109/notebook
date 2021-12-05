@@ -18,6 +18,6 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
 
   # customs
-  put "/journals/:id/update_journal", to: 'journals#update_journal'
+  patch "/journals/:id/update_journal", to: 'journals#update_journal'
 
 end

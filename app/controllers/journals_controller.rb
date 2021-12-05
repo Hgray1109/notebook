@@ -35,7 +35,7 @@ before_action :authorize_user, only: [:index, :show, :create, :update, :destroy]
       def update_journal
       
         journal_to_update = Journal.find(params[:id])
-        journal_to_update.update!(journal: params[:journal_body])
+        journal_to_update.update!(journal_body: params[:journal_body])
         render json: journal_to_update, status: :ok
     end
       

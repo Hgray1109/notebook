@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 
 import { Link} from 'react-router-dom';
 
@@ -7,9 +7,13 @@ export default function JournalCard({journal}) {
             console.log(journal)
     
     return(
-        <nav>
-            {journal ? <Link to={`/journals/${journal.id}`} style={{ textDecoration: 'none', color: 'black' }} ><button>Create Your Journal</button> </Link> : null}
-        </nav>
+        <div>
+            {journal ? 
+            (<div>
+                <Link to={`/journals/${journal.id}`} style={{ textDecoration: 'none', color: 'black' }} ><button>{journal.title}</button> </Link>
+
+            </div>): null}
+        </div>
     )
 }
 

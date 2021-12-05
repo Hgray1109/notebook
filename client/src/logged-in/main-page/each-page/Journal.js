@@ -1,22 +1,26 @@
 import React, { useState, useEffect} from "react";
 import JournalCard from './cards-folder/JournalCard'
+import NotePage from "./cards-folder/NotePage";
 
 
-export default function Journal(){
-    const [journals, setJournals] = useState([])
-
-    useEffect(()=>{
-        fetch("/journals")
-        .then(resp => resp.json())
-        .then(setJournals)
-    },[])
+export default function Journal({ journals }){
+    
 
 
-    const eachJournal = journals ? (journals.map( journal => 
+    const eachJournal = journals ? (journals.map( journal => (
 <JournalCard 
         key={journal.id}
         journal={journal}
         />
+
+        )
+        )) : null
+
+    const indiJournal = journals ? (journals.map( journal => 
+        <NotePage
+    key={journal.id}
+    journal={journal}
+    />
         )) : null
     
         console.log(journals)
