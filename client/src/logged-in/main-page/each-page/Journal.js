@@ -1,7 +1,7 @@
 import React, { useState, useEffect} from "react";
 import JournalCard from './cards-folder/JournalCard'
 import NotePage from "./cards-folder/NotePage";
-
+import { Link} from 'react-router-dom';
 
 export default function Journal({ journals }){
     
@@ -29,6 +29,7 @@ export default function Journal({ journals }){
         <div className='journal-container'>
             <h1>this is the journal page</h1>
             {eachJournal}
+            <Link to={`/journals/addJournal`} style={{ textDecoration: 'none', color: 'black' }} ><button>Add Journal</button> </Link>
         </div>
     )
 }

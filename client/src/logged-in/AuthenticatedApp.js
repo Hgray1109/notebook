@@ -33,7 +33,7 @@ function handleLogout(){
         <div className='home-page'>
             <Header/>
             <Navbar handleLogout={handleLogout}/>
-            <Body/>
+            <Body user={currentUser}/>
         </div>
     )
 }

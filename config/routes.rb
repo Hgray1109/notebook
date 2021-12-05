@@ -19,5 +19,5 @@ Rails.application.routes.draw do
 
   # customs
   patch "/journals/:id/update_journal", to: 'journals#update_journal'
-
+  patch "/journals/:id/journal_note", to: "journals#journal_note"
 end

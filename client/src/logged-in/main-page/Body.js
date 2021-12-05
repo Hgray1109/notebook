@@ -6,8 +6,9 @@ import Videos from "./each-page/Videos";
 import Journal from "./each-page/Journal";
 import JournalCard from "./each-page/cards-folder/JournalCard";
 import NotePage from "./each-page/cards-folder/NotePage";
+import AddJournalPage from "./each-page/AddJournalPage"
 
-export default function Body(){
+export default function Body({ user }){
     const [journals, setJournals] = useState([])
 
     useEffect(()=>{
@@ -25,6 +26,7 @@ export default function Body(){
                 <Route exact path='/videos' element={<Videos/>}/>
                 <Route exact path='/journals' element={<Journal journals={journals}/>}/>
                 <Route exact path="/journals/:id" element={<NotePage journals={journals}/>}/>
+                <Route exact path='/journals/addJournal' element={<AddJournalPage user={user}/>}/>
             </Routes>
         </div>
     )
