@@ -10,23 +10,40 @@ import AddJournalPage from "./each-page/AddJournalPage"
 
 export default function Body({ user }){
     const [journals, setJournals] = useState([])
+    const [passvideo, setPassVideo] = useState([])
 
     useEffect(()=>{
+       refreshJournals()
+    },[])
+
+    function onJournalCardDelete (journalId) {
+        console.log(journalId)
+        fetch(`/journals/${journalId}`,{
+            method: 'DELETE'
+              
+        }).then (refreshJournals)
+        
+    }
+    function refreshJournals() {
         fetch("/journals")
         .then(resp => resp.json())
         .then(setJournals)
-    },[])
+    }
 
+    // function newJournalRefresh() {
 
+    // }
+
+      
     return(
         <div>
             <Routes>
                 <Route exact path="/favorite-album" element={<FavoriteAlbum/>}/>
                 <Route exact path="/favorite-songs" element={<FavoriteSongs/>}/>
                 <Route exact path='/videos' element={<Videos/>}/>
-                <Route exact path='/journals' element={<Journal journals={journals}/>}/>
-                <Route exact path="/journals/:id" element={<NotePage journals={journals}/>}/>
-                <Route exact path='/journals/addJournal' element={<AddJournalPage user={user}/>}/>
+                <Route exact path='/journals' element={<Journal onJournalCardDelete={onJournalCardDelete} journals={journals}/>}/>
+                <Route exact path="/journals/:id" element={<NotePage journals={journals} noterefresh={refreshJournals}/>}/>
+                <Route exact path='/journals/addJournal' element={<AddJournalPage user={user} refresh={refreshJournals}/>}/>
             </Routes>
         </div>
     )

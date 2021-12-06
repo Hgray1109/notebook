@@ -2,19 +2,17 @@ import React from "react";
 
 import { Link} from 'react-router-dom';
 
-export default function JournalCard({journal}) {
+export default function JournalCard({journal, onDelete}) {
         
             console.log(journal)
 
-            function refreshPage() {
-                window.location.reload(false);
-              }
+            // function refreshPage() {
+            //     window.location.reload(false);
+            //   }
         
         function handleJournalDeletion(){
-            fetch(`/journals/${journal.id}`,{
-                method: 'DELETE'
-            })
-            refreshPage()
+            onDelete(journal.id)
+             // refreshPage()
         }
     
     return(

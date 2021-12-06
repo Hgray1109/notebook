@@ -2,15 +2,21 @@ import React,{useState} from 'react'
 import { useNavigate } from "react-router-dom";
 
 
-export default function AddJournalPage({ user}){
+export default function AddJournalPage({ user, refresh}){
     const [title, setTitle] = useState('')
     const [body, setBody] = useState('')
     const navigate = useNavigate();
 
+
+    // function refreshPage() {
+    //     window.location.reload(false);
+    //   }
+
+
     function handleJournalPost(e){
         e.preventDefault()
         fetch(`/journals`,{
-            method: 'Post',
+            method: 'POST',
             headers: { 'Content-Type': 'application/json'},
             body: JSON.stringify({
                 user_id: user.id,
@@ -23,7 +29,9 @@ export default function AddJournalPage({ user}){
                     console.log(data)
                     setTitle('')
                     setBody('')
+                    refresh()
                     navigate('/journals')
+                    
                 })
 
     }

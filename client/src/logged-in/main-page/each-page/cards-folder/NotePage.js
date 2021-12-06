@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import { useParams, useNavigate } from 'react-router-dom'
 
-export default function NotePage({ journal }){
+export default function NotePage({ journal, noterefresh }){
     const [journalEntry, setJournalEntry] = useState('')
     const [newJournal, setNewJournal] = useState({})
     const [refresh, setRefresh] = useState(false)
@@ -10,9 +10,9 @@ export default function NotePage({ journal }){
     const newId = parseInt(id)
     const navigate = useNavigate();
 
-    function refreshPage() {
-        window.location.reload(false);
-      }
+    // function refreshPage() {
+    //     window.location.reload(false);
+    //   }
 
     useEffect(() => {
         fetch(`/journals/${newId}`)
@@ -36,7 +36,7 @@ export default function NotePage({ journal }){
             .then(data => {
                 
                 setJournalEntry('')
-                refreshPage()
+                // refreshPage()
                 setRefresh(!refresh)
             })
     }
@@ -54,7 +54,8 @@ export default function NotePage({ journal }){
             .then(data => {
                 
             //     setJournalEntry('')
-                refreshPage()
+            noterefresh()
+            navigate('/journals')
             //     setRefresh(!refresh)
             })
     }
@@ -72,8 +73,10 @@ export default function NotePage({ journal }){
             .then(data => {
                 
                 
-                refreshPage()
+                
+                setJournalEntry('')
                 setRefresh(!refresh)
+               
             })
     }
 

@@ -3,14 +3,15 @@ import JournalCard from './cards-folder/JournalCard'
 import NotePage from "./cards-folder/NotePage";
 import { Link} from 'react-router-dom';
 
-export default function Journal({ journals }){
+export default function Journal({ journals, onJournalCardDelete }){
     
-
+    
 
     const eachJournal = journals ? (journals.map( journal => (
 <JournalCard 
         key={journal.id}
         journal={journal}
+        onDelete = {onJournalCardDelete}
         />
 
         )

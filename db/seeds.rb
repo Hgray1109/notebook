@@ -20,8 +20,8 @@ song2 = Song.create(user_id: user2.id, album_id: album2.id, artist: "Linkin Park
 
 puts "song seeding done"
 
-video1 = Video.create(user_id: user1.id, url: "https://www.youtube.com/embed/Co0tTeuUVhU", title: "Heartless Video", video_body: "The visual representation that put kayne on the map")
-video2 = Video.create(user_id: user2.id, url: "https://www.youtube.com/embed/Gd9OhYroLN0", title: "Crawling Video", video_body: "When I knew it was the begining of the end")
+video1 = Video.create(user_id: user1.id, url: "Co0tTeuUVhU", title: "Heartless Video", video_body: "The visual representation that put kayne on the map")
+video2 = Video.create(user_id: user2.id, url: "Gd9OhYroLN0", title: "Crawling Video", video_body: "When I knew it was the begining of the end")
 
 puts "video seeding done"
 

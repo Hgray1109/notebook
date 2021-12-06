@@ -1,15 +1,21 @@
-import React from "react";
+import { useEffect, useState } from "react"
+import VideoCard from "./VideoCard"
 
 
 
-export default function Videos(){
-
-
-    return(
-        <div><h1>this is the videos page</h1></div>
+ export default function Videos({currentUser}){
+    const [videos, setVideos] = useState([])
+    
+    
+    useEffect(() => {
+        fetch("/videos")
+        .then(resp => resp.json())
+        .then(vids=> setVideos(vids))
+    },[])
+     console.log(videos)
+    return (
+        <>
+        {videos.map(vid=>(<VideoCard key={vid.id} video = {vid} currentUser={currentUser}/>))}
+        </>
     )
 }
-
-
-
-{/* <iframe width="853" height="480" src={`https://www.youtube.com/embed/${embedId}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> */}
