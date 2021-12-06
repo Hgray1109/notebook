@@ -54,7 +54,7 @@ export default function NotePage({ journal }){
             .then(data => {
                 
             //     setJournalEntry('')
-            //     refreshPage()
+                refreshPage()
             //     setRefresh(!refresh)
             })
     }
@@ -80,15 +80,7 @@ export default function NotePage({ journal }){
 
     function handleLastPage() {
         navigate("/journals")
-
-
     }
-
-
-
-    console.log(newJournal.journal_body)
-
-
 
     return(
         <div>

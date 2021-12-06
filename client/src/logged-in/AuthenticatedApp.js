@@ -6,7 +6,8 @@ import { useNavigate } from 'react-router-dom'
 
 
 export default function AuthenticatedApp ({ currentUser, rerender, setRerender, setCurrentUser}){
-// const {id } = currentUser
+// these parmas didn't work - rerender setrerender
+    // const {id } = currentUser
 const navigate = useNavigate();
 
 useEffect(() => {

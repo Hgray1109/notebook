@@ -5,14 +5,26 @@ import { Link} from 'react-router-dom';
 export default function JournalCard({journal}) {
         
             console.log(journal)
+
+            function refreshPage() {
+                window.location.reload(false);
+              }
+        
+        function handleJournalDeletion(){
+            fetch(`/journals/${journal.id}`,{
+                method: 'DELETE'
+            })
+            refreshPage()
+        }
     
     return(
         <div>
             {journal ? 
             (<div>
                 <Link to={`/journals/${journal.id}`} style={{ textDecoration: 'none', color: 'black' }} ><button>{journal.title}</button> </Link>
-
+                <button onClick={handleJournalDeletion}>Delete Button</button>
             </div>): null}
+            
         </div>
     )
 }
