@@ -34,7 +34,11 @@ function handleLogout(){
         <div className='home-page'>
             <Header/>
             <Navbar handleLogout={handleLogout}/>
+            {/* <iframe src="https://open.spotify.com/embed/track/4VwvwlbNZavsDkRdIKFGBi" width="560" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> */}
             <Body user={currentUser}/>
         </div>
     )
 }
+
+
+// width="300" height="380"

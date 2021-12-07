@@ -5,6 +5,10 @@ import React, { useState, useEffect } from 'react'
 import './App.css';
 
 
+
+
+
+
 function App() {
   const [currentUser, setCurrentUser] = useState(null)
   const [authChecked, setAuthChecked] = useState(false)
@@ -30,6 +34,10 @@ function App() {
   if (!authChecked) { return <div><h1>something</h1></div> }
   return (
     <div className="container">
+
+
+
+
       {currentUser ? (
         <AuthenticatedApp
           setCurrentUser={setCurrentUser}
