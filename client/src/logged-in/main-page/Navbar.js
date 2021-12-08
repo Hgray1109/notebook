@@ -6,15 +6,14 @@ export default function Navbar({ handleLogout }){
 
 
     return(
-        <div className='navbar'>
-            <h1>this is the Navbar</h1> 
-            <nav>
-                <Link to='/home'><span className='menu-item'>Home</span></Link>
-                <Link to='/music-player'><span className='menu-item' >Music-Player</span></Link>
-                <Link to='/videos'><span className='menu-item' >Videos</span></Link>
-                <Link to='/journals'><span className='menu-item' >Journal</span></Link>
-                <Link to='/'><span className='menu-item' onClick={handleLogout}>Log out</span></Link>
-                
+        <div className="navbar-header">
+            
+            <nav className="navbar navbar-default">
+                <Link to='/home'><span className="navbar-brand">Home</span></Link>
+                <Link to='/music-player'><span className="navbar-brand" >Music-Player</span></Link>
+                <Link to='/videos'><span className='navbar-brand' >Videos</span></Link>
+                <Link to='/journals'><span className='navbar-brand' >Journal</span></Link>
+                <Link to='/'><span className='navbar-brand' onClick={handleLogout}>Log out</span></Link>
                 {/* <Link to= '/auth/spotify/callback'>Spotify button</Link> */}
 
             </nav>
