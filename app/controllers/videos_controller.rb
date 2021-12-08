@@ -1,5 +1,5 @@
 class VideosController < ApplicationController
-    before_action :set_video, only: [:destroy, :create] 
+    # before_action :set_video, only: [:create, :destroy] 
     before_action :authorize_user, only: [:index, :create, :destroy]
 
 
@@ -20,19 +20,22 @@ class VideosController < ApplicationController
       end
 
 
+      # def destroy
+      #   @video.destroy
+      # end
       def destroy
-        @video.destroy
+        one_video = Video.find(params[:id])
+        one_video.destroy
       end
-
 
     private
 
-    def set_video
-        @video = Video.find(params[:id])
-    end
+    # def set_video
+    #     @video = Video.find(params[:id])
+    # end
 
     def video_params
-        params.permit(:user_id, :url, :title, :video_body)
+        params.permit(:user_id, :url)
     end
 
 

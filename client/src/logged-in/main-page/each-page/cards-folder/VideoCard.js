@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 
 
-export default function VideoCard ({video, currentUser}) {
+export default function VideoCard ({video, user, handleVideoDelete}) {
     console.log(video)
     const embed = video.url
 
@@ -19,6 +19,7 @@ export default function VideoCard ({video, currentUser}) {
       allowFullScreen
       title="Embedded youtube"
     ></iframe>
+    <button onClick={() => handleVideoDelete(video.id)}>Delete</button>
     </div>
 
 );

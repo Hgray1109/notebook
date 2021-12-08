@@ -32,6 +32,13 @@ module ReactRailsApiProjectTemplate
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
 
+    # config/application.rb
+
+  RSpotify::authenticate("efa0b5882003451dbbf97c89a27ee002", "5d6a16c67d6b484087e6ad504b2e8105")
+
+    
+    
+    
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files

@@ -10,9 +10,6 @@ export default function AuthenticatedApp ({ currentUser, rerender, setRerender, 
     // const {id } = currentUser
 const navigate = useNavigate();
 
-useEffect(() => {
-    console.log('hey')
-},[rerender])
 
 
 function handleLogout(){

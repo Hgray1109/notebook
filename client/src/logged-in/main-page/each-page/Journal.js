@@ -4,7 +4,7 @@ import NotePage from "./cards-folder/NotePage";
 import { Link} from 'react-router-dom';
 
 export default function Journal({ journals, onJournalCardDelete }){
-    
+    debugger
     
 
     const eachJournal = journals ? (journals.map( journal => (
@@ -16,15 +16,7 @@ export default function Journal({ journals, onJournalCardDelete }){
 
         )
         )) : null
-
-    const indiJournal = journals ? (journals.map( journal => 
-        <NotePage
-    key={journal.id}
-    journal={journal}
-    />
-        )) : null
     
-        console.log(journals)
 
     return(
         <div className='journal-container'>

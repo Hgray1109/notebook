@@ -1,6 +1,7 @@
+
 class UsersController < ApplicationController
     skip_before_action :confirm_authentication
-
+    
 
     def index
         user = User.all
@@ -24,6 +25,8 @@ class UsersController < ApplicationController
             render json: {error: user.errors}, status: :unprocessable_entity
         end
     end
+
+   
 
 
 
