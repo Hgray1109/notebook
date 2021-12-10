@@ -36,7 +36,7 @@ export default function Login({ setCurrentUser }) {
     return (
         <div className='login-page'>
             <div className='login-info'>
-                <h1>Welcome to Notebook - Infinite Ink</h1>
+                <h1 style={{ textDecoration: 'underline', color: "blue"}}>Welcome to Infinite Ink</h1>
             </div>
             <div className='login-form-container'>
                 <h2 className='login-h1'>Login</h2>
@@ -47,10 +47,10 @@ export default function Login({ setCurrentUser }) {
                     <input type="password" placeholder='Password..' value={password} name="password" required onChange={(e) => setPassword(e.target.value)} />
                     <span>Email: </span>
                     <input type="text" placeholder='Email..' value={email} name="email" required onChange={(e) => setEmail(e.target.value)} />
-                    <button type='submit'>Log in</button>
+                    <button style={{ backgroundColor: "blue", color: "black"}} type='submit' >Log in</button>
                 </form>
                 <div className="signUpText">
-                <p>Don't have an account? Click <Link to='/signup' style={{ textDecoration: 'none' }}><span>here</span></Link> to sign up.</p>
+                <p>Don't have an account? Click <Link to='/signup' style={{ textDecoration: 'underline', color: "blue"}}><span>here</span></Link> to sign up.</p>
                 </div>
             </div>
         </div>

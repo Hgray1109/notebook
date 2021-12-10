@@ -36,10 +36,10 @@ export default function Signup({ setCurrentUser }) {
     return (
         <div className='login-page'>
             <div className='login-info'>
-                <h1>Welcome to Notebook - Infinite Ink</h1>
+                <h1 style={{ textDecoration: 'underline', color: "blue"}}>Welcome to Infinite Ink </h1>
             </div>
             <div className='login-form-container'>
-                <h3 className='login-h1'>Signup</h3>
+                <h3 className='login-h1'>Sign up for your free account today</h3>
                 <form className='login-form' onSubmit={handleSubmit}>
                     <div className = "login">
                     <span>Username: </span>
@@ -48,12 +48,12 @@ export default function Signup({ setCurrentUser }) {
                     <input type="password" placeholder='Password...' value={password} name="password" required onChange={(e) => setPassword(e.target.value)} />
                     <span>Email: </span>
                     <input type="text" placeholder='Email...' value={email} name="email" required onChange={(e) => setEmail(e.target.value)} />
-                    <button type='submit'>Sign Up!</button>
+                    <button style={{ backgroundColor: "blue", color: "black"}}type='submit'>Sign Up!</button>
                     </div>
                 </form>
                 <div className= "info">
-                <p>If you have an account Click <Link to='/' style={{ textDecoration: 'none' }}><span>here</span></Link> to login.</p>
-                <p> Click here for a Premium Account <Link to='/adminSignup' style={{textDecoration: 'none'}}><span>here</span></Link> </p>
+                <p >If you have an account Click <Link to='/' style={{ textDecoration: 'underline', color: "blue"}}><span>here</span></Link> to login.</p>
+                <p> For a Premium Account Click <Link to='/adminSignup' style={{ textDecoration: 'underline', color: "blue"}}><span>here</span></Link> </p>
                 </div>
             </div>
         </div>

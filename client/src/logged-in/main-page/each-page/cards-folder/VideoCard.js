@@ -19,7 +19,7 @@ export default function VideoCard ({video, user, handleVideoDelete}) {
       allowFullScreen
       title="Embedded youtube"
     ></iframe>
-    <button onClick={() => handleVideoDelete(video.id)}>Delete</button>
+    <button style={{ backgroundColor: "red", textDecoration: 'none', color: 'white' }}onClick={() => handleVideoDelete(video.id)}>Delete</button>
     </div>
 
 );

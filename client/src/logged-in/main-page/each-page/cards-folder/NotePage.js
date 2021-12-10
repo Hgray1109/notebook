@@ -93,7 +93,7 @@ export default function NotePage({ journal, noterefresh }){
             <span>{newJournal.journal_body}</span> : <form className = "noteEntry" onSubmit={handleFormSubmit}>
             <label>Journal entry</label>
             <textarea  className="textpadding" type='text' value={journalEntry} onChange={(e) => setJournalEntry(e.target.value)}></textarea>
-            <div className= "button"> <button type='submit'>submit your journal</button> </div>
+            <div className= "button"> <button type='submit'>Submit Your Journal</button> </div>
             </form>  }
             <form className="discoverypadding" onSubmit={handleNoteSubmit}>
                 <label className = "discoveryMargin"> Discovery </label>

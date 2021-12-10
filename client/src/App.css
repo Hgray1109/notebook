@@ -6,27 +6,41 @@
   font-family: "Quicksand";
   color: #333;
   font-size: large;
- 
-  /* box-shadow: rgb(0, 130, 102); */
+  
+  
+  
 
   /* background-origin: padding-box; */
   
 }
 
+.info{
+  margin-top: 20px
+}
 
-/* 
-.trackplayer{
-  width:400px;
-  padding: 10px 10px 10px 10px;
-  margin: auto;
 
-} */
+.login-info {
+  margin-bottom: 35px;
 
+}
+
+
+.creditPadding{
+  margin-top: 30px;
+}
+
+.cardInfoPadding{
+  margin-bottom: 10px;
+}
+
+.accountLogin{
+  margin-top: 140px;
+}
 .flexbox-container{ 
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
+  
 }
 
 .hometext{
@@ -45,9 +59,7 @@
 }
 
 
-.homeDescription{
 
-}
 
 .noteEntry{
   display: flex;
@@ -108,13 +120,16 @@ height: 100px;
   
 }
 
-.login-form {
-
-}
 
 .signUpText{
-  margin-top: 10px;
+  margin-top: 40px;
 }
+
+
+.login-h1{
+  margin-bottom: 20px;
+}
+
 
 .discoveryMargin{
   margin-top: 10px;
@@ -123,14 +138,16 @@ height: 100px;
 /* .titlebttn{
 } */
 
-.bullshit{
+.playercard{
   display: flex;
   flex-wrap: wrap;
   width: 100%;
   margin: 10px;
+ 
 }
 
-.bullshit div{
+.playercard div{
+  
   margin: 5px;
   
 }

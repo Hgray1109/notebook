@@ -31,7 +31,7 @@ export default function MusicPlayer(){
                 <input type='text' placeholder="Search Artist" value={artist} onChange={(e) => setArtist(e.target.value)}></input>
                 <button className= "bttnbar" type='submit'>🔍</button>
             </form> 
-            <div className = "bullshit" >
+            <div className = "playercard" >
             {eachTrack} 
             </div>
         </div>

@@ -45,10 +45,12 @@ export default function AdminSignup({ setCurrentUser }) {
     return (
         <div className='login-page'>
             <div className='login-info'>
-                <h1>Premium Notebook</h1>
+                <h1 style={{ textDecoration: 'none', color: "blue"}}>Infinite Ink </h1>
+                <h2>Premium sign up</h2>
+                <h3> Create Journals and save videos with Infinite Ink premium </h3>
             </div>
             <div className='login-form-container'>
-                <h1 className='login-h1'>Signup</h1>
+                <h3 className='login-h1'>Sign up</h3>
                 <form className='login-form' onSubmit={handleSubmit}>
                     <span>Username: </span>
                     <input placeholder='Username..' value={username} name="username" required onChange={(e) => setUsername(e.target.value)} />
@@ -56,17 +58,21 @@ export default function AdminSignup({ setCurrentUser }) {
                     <input type="password" placeholder='Password..' value={password} name="password" required onChange={(e) => setPassword(e.target.value)} />
                     <span>Email: </span>
                     <input type="text" placeholder='Email..' value={email} name="email" required onChange={(e) => setEmail(e.target.value)} />
-                    <p> Please Enter your credit card information</p>
-                    <button onClick={handleToggle}> Credit/Debit Card </button> 
-                    {toggleForm ? ( <div> <span>Card Number: </span>
-                    <input palceholder ='Card Number..' value = {card_number} name="card_number" required onChange={(e) => setCardNumber(e.target.value)} />
+                    
+                    <p className ="creditPadding"> <h3> Please enter your credit card information </h3> </p>
+                    <div className ="PremiumSingup">
+                    <button className="cardInfoPadding" onClick={handleToggle}> Credit/Debit Card </button> 
+                    {toggleForm ? ( <div> <span >Card Number: </span>
+                    <input palceholder='Card Number..' value = {card_number} name="card_number" required onChange={(e) => setCardNumber(e.target.value)} />
                     <span>Card Expiration: </span>
                     <input palceholder ='Card Expiration..' value = {card_expiration} name="card_expiration" required onChange={(e) => setExpiration(e.target.value)} />
                     <span>Card Name: </span>
                     <input palceholder ='Card Name..' value = {card_name} name="card_name" required onChange={(e) => setCardName(e.target.value)} /> 
-                    <button type='submit'>Sign Up!</button> </div>) : null}
+                    <button style={{ backgroundColor: "blue", color: "black"}} type='submit'>Sign Up!</button> </div>) : null}
+                    </div>
                 </form>
-                <p>If you have an account Click <Link to='/' style={{ textDecoration: 'none' }}><span>here</span></Link> to login.</p>
+                <p className='login-info'>  </p>
+                <p className="accountLogin" >If you have an account click <Link to='/' style={{ textDecoration: 'underline', color: "blue"}}><span>here</span></Link> to login.</p>
                
             </div>
         </div>
