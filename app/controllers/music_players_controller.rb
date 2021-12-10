@@ -23,7 +23,7 @@ before_action :authorize_user, only: [:destroy]
             albums = arctic_monkeys.albums
             albums.first.name #=> "AM"
 
-            album = albums.third
+            album = albums.first
             album.release_date      #=> "2013-09-10"
             album.images            #=> (Image array)
             album.available_markets #=> ["AR", "BO", "BR", ...]

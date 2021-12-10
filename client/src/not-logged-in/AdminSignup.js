@@ -57,7 +57,7 @@ export default function AdminSignup({ setCurrentUser }) {
                     <span>Email: </span>
                     <input type="text" placeholder='Email..' value={email} name="email" required onChange={(e) => setEmail(e.target.value)} />
                     <p> Please Enter your credit card information</p>
-                    <button onClick={handleToggle}> MONEY </button> 
+                    <button onClick={handleToggle}> Credit/Debit Card </button> 
                     {toggleForm ? ( <div> <span>Card Number: </span>
                     <input palceholder ='Card Number..' value = {card_number} name="card_number" required onChange={(e) => setCardNumber(e.target.value)} />
                     <span>Card Expiration: </span>

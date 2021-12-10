@@ -36,10 +36,10 @@ export default function Login({ setCurrentUser }) {
     return (
         <div className='login-page'>
             <div className='login-info'>
-                <h1>Welcome to Notebook</h1>
+                <h1>Welcome to Notebook - Infinite Ink</h1>
             </div>
             <div className='login-form-container'>
-                <h1 className='login-h1'>Login</h1>
+                <h2 className='login-h1'>Login</h2>
                 <form className='login-form' onSubmit={handleSubmit}>
                     <span>Username: </span>
                     <input placeholder='Username..' value={username} name="username" required onChange={(e) => setUsername(e.target.value)} />
@@ -49,8 +49,16 @@ export default function Login({ setCurrentUser }) {
                     <input type="text" placeholder='Email..' value={email} name="email" required onChange={(e) => setEmail(e.target.value)} />
                     <button type='submit'>Log in</button>
                 </form>
+                <div className="signUpText">
                 <p>Don't have an account? Click <Link to='/signup' style={{ textDecoration: 'none' }}><span>here</span></Link> to sign up.</p>
+                </div>
             </div>
         </div>
     )
 }
+
+
+{/* <div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Email address</label>
+  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+</div> */}

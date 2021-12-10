@@ -38,13 +38,15 @@ export default function AddJournalPage({ user, refresh}){
 
 
     return(
-        <div>
+        <div className= "submissionJournal">
             <form onSubmit={handleJournalPost}>
                 <label>Journal Title</label>
                 <input type='text' value={title} onChange={(e) => setTitle(e.target.value)}></input>
                 <label>Journal Body</label>
                 <input type='text' value={body} onChange={(e) => setBody(e.target.value)}></input>
-                <button type='submit'>Add Journal</button>
+                <div>
+                <button type='submit' style={{ textDecoration: 'none', color: 'green' }}>Add Journal</button>
+                </div>
             </form>
         </div>
     )

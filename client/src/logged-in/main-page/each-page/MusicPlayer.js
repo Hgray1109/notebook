@@ -25,13 +25,17 @@ export default function MusicPlayer(){
     )) : null
     
     return(
-        <div>
-            <form onSubmit={fetchArtistData}>
-                <label>search for the Artist</label>
-                <input type='text' value={artist} onChange={(e) => setArtist(e.target.value)}></input>
-                <button type='submit'> submit!</button>
+        <div className= "spotifyGrid" >
+            <form className= "artistbttn" onSubmit={fetchArtistData}>
+                {/* <label>Search Artist</label> */}
+                <input type='text' placeholder="Search Artist" value={artist} onChange={(e) => setArtist(e.target.value)}></input>
+                <button className= "bttnbar" type='submit'>🔍</button>
             </form> 
-            {eachTrack}
+            <div className = "bullshit" >
+            {eachTrack} 
+            </div>
         </div>
     )
 }
+
+// , justifyContent: "space-evenly" 

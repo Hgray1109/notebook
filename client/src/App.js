@@ -31,7 +31,7 @@ function App() {
   }, [rerender])
   
 
-  if (!authChecked) { return <div><h1>something</h1></div> }
+  if (!authChecked) { return <div><h1>loading...</h1></div> }
   return (
     <div className="container">
 

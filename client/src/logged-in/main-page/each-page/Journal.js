@@ -4,7 +4,7 @@ import NotePage from "./cards-folder/NotePage";
 import { Link} from 'react-router-dom';
 
 export default function Journal({ journals, onJournalCardDelete }){
-    debugger
+    
     
 
     const eachJournal = journals ? (journals.map( journal => (
@@ -19,10 +19,12 @@ export default function Journal({ journals, onJournalCardDelete }){
     
 
     return(
-        <div className='journal-container'>
-            <h1>this is the journal page</h1>
+        <div className='journal-container' >
+            <h1 className = "journalheader">Create and Store Journal Entries</h1>
+            <div className ="openJournal">
             {eachJournal}
-            <Link to={`/journals/addJournal`} style={{ textDecoration: 'none', color: 'black' }} ><button>Add Journal</button> </Link>
+            <Link to={`/journals/addJournal`} style={{ display: 'flex', justifyContent: "space-around", textDecoration: 'none', color: 'black' }} ><button style={{ textDecoration: 'none', color: 'Green' }}>Add Journal</button> </Link>
+            </div>
         </div>
     )
 }

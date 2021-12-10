@@ -18,9 +18,9 @@ export default function JournalCard({journal, onDelete}) {
     return(
         <div>
             {journal ? 
-            (<div>
+            (<div className= "titlebttn">
                 <Link to={`/journals/${journal.id}`} style={{ textDecoration: 'none', color: 'black' }} ><button>{journal.title}</button> </Link>
-                <button onClick={handleJournalDeletion}>Delete Button</button>
+                <button style={{ textDecoration: 'underline red', color: 'red' }} className= "deletetitle" onClick={handleJournalDeletion}>Delete Entry</button>
             </div>): null}
             
         </div>

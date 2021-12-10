@@ -87,21 +87,23 @@ export default function NotePage({ journal, noterefresh }){
 
     return(
         <div>
-            <h1>notepage</h1>
+            <h1>NotePage</h1>
+            <div>
             {newJournal.journal_body ? 
-            <span>{newJournal.journal_body}</span> : <form onSubmit={handleFormSubmit}>
+            <span>{newJournal.journal_body}</span> : <form className = "noteEntry" onSubmit={handleFormSubmit}>
             <label>Journal entry</label>
-            <input type='text' value={journalEntry} onChange={(e) => setJournalEntry(e.target.value)}></input>
-            <button type='submit'>submit your journal</button>
+            <textarea  className="textpadding" type='text' value={journalEntry} onChange={(e) => setJournalEntry(e.target.value)}></textarea>
+            <div className= "button"> <button type='submit'>submit your journal</button> </div>
             </form>  }
-            <form onSubmit={handleNoteSubmit}>
-                <label> Discovery </label>
-                <input type = 'text' value={notes} onChange={(e) => setNotes(e.target.value)}></input>
+            <form className="discoverypadding" onSubmit={handleNoteSubmit}>
+                <label className = "discoveryMargin"> Discovery </label>
+                <textarea className="dispadding" rows="4" cols="100" type = 'text-area' value={notes} onChange={(e) => setNotes(e.target.value)}></textarea>
                 <p>{newJournal.notes}</p> 
                 <button type='submit'>Create Discovery Note</button>
             </form>
-            <button onClick={handleEdit}>this is the edit button</button>
-            <button onClick={handleLastPage}>last page</button>
+            </div>
+            <button onClick={handleEdit}>Edit Entry</button>
+            <button onClick={handleLastPage}>Last Page</button>
             
         </div>
     )

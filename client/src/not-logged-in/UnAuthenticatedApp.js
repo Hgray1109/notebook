@@ -6,6 +6,7 @@ import AdminSignup from './AdminSignup'
 
 export default function UnAuthenticatedApp({ setCurrentUser }) {
     return (
+        <div>
             <Routes>
                 <Route exact path="/" element={<Login setCurrentUser={setCurrentUser}/>}/>
                 <Route exact path="/signup" element={<Signup setCurrentUser={setCurrentUser} />}/>
@@ -14,9 +15,14 @@ export default function UnAuthenticatedApp({ setCurrentUser }) {
                 
             </Routes>
             
+        </div>
+            
     
     )
 }
+
+
+{/* <img className = "logo" src ="/images/notebook-logo.jpg" alt="something" /> */}
 
 // {/* <Route path=":id" element={<UserProfile />} />
 //         <Route path="me" element={<OwnUserProfile />} /> */}
